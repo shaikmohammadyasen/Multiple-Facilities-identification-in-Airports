@@ -25,15 +25,18 @@ Description: Details about the taxiways present at each airport, including their
  Here’s how the data for the detection head is derived from the backbone network:
  # Bounding Box Prediction: 
  The detection head predicts bounding boxes around objects of interest. These bounding boxes are represented by four values: (x, y, width, height), whichdefine the position and size of the box relative to the image dimensions. These predictions aretypically obtained through a set of convolutional layers specifically designed for bounding box regression. Each convolutional layer refines the coordinates and dimensions of the boundingboxes based on the features extracted by the backbone network.
- # Objectless Score: Along with bounding boxes, the detection head predicts an objectless
+ # Objectless Score: 
+ Along with bounding boxes, the detection head predicts an objectless
  score for each bounding box. This score indicates the likelihood that the box contains a
  meaningful object rather than background clutter or noise. The objectless score is typically
  produced by a sigmoid activation function applied to the output of a convolutional layer. It
  represents the probability that an object is present within the corresponding bounding box.
- # Class Prediction: In addition to bounding boxes and objectless scores, the detection head
+ # Class Prediction: 
+ In addition to bounding boxes and objectless scores, the detection head
  predicts the probability distribution over predefined classes for each detected object. This
  class prediction is achieved through a softmax activation function applied to the output of
  another set of convolutional layers. These layers produce a vector of class scores, with each
  element representing the probability of the object belonging to a specific class. The number
  of elements in the class score vector corresponds to the number of classes in the dataset (e.g.,
  person, car, dog).
+ 
